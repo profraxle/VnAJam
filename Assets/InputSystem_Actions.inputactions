@@ -505,7 +505,7 @@
                 {
                     "name": "",
                     "id": "d8c38d22-1924-454f-8c3a-1672121020cc",
-                    "path": "",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

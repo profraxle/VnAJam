@@ -11,17 +11,17 @@ public class PolarBear : MonoBehaviour
         Fishing
     };
 
-    private BearState _bearState = BearState.Moving;
+    private BearState _bearState = BearState.Swimming;
 
-    private SwimmingBehaviour _swimmingBehaviour;
-    private MovingBehaviour _movingBehaviour;
-    private FishingBehaviour _fishingBehaviour;
+    private SwimmingBehaviour _swimmingBehaviour = new SwimmingBehaviour();
+    private MovingBehaviour _movingBehaviour = new MovingBehaviour();
+    private FishingBehaviour _fishingBehaviour = new FishingBehaviour();
     
     
     // Start is called before the first frame update
     void Start()
     {
-        moveAction
+      
     }
 
     // Update is called once per frame
