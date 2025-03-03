@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class FishingBehaviour : BaseBehaviour
 {
@@ -14,23 +16,24 @@ public class FishingBehaviour : BaseBehaviour
     
     public bool isFishing = false;
 
-    [SerializeField]KeyCode[] actionKeys;
+    [SerializeField]InputAction[] actionKeys;
 
-    [SerializeField]KeyCode[] curActions;
+    [SerializeField]InputAction[] curActions;
     [SerializeField]int curIndex = 0;
 
-    KeyCode[] actionKeysSet = {
-        KeyCode.W,
-        KeyCode.A,
-        KeyCode.S,
-        KeyCode.D
-    };
-
+    InputAction[] actionKeysSet = new InputAction[4];
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        StartFishing(4);    
+        base.Start();
+
+        actionKeysSet[0] = InputSystem.actions.FindAction("FishUp");
+        actionKeysSet[1] = InputSystem.actions.FindAction("FishDown");
+        actionKeysSet[2] = InputSystem.actions.FindAction("FishLeft");
+        actionKeysSet[3] = InputSystem.actions.FindAction("FishRight");
+
+        StartFishing(4);
     }
 
     // Update is called once per frame
@@ -38,7 +41,7 @@ public class FishingBehaviour : BaseBehaviour
     {
         if (isFishing)
         {
-            if (Input.GetKeyDown(actionKeys[curIndex]))
+            if (actionKeys[curIndex].IsPressed())
             {
                 if(curIndex == actionKeys.Length - 1)
                 {
@@ -62,8 +65,8 @@ public class FishingBehaviour : BaseBehaviour
 
     void GenerateRandomActions(int totActions)
     {
-        actionKeys = new KeyCode[totActions];
-        curActions = new KeyCode[totActions];
+        actionKeys = new InputAction[totActions];
+        curActions = new InputAction[totActions];
         curIndex = 0;
         for (int i=0; i < totActions; i++)
         {
@@ -82,9 +85,9 @@ public class FishingBehaviour : BaseBehaviour
 
     void PrintActions()
     {
-        foreach (KeyCode action in actionKeys)
+        foreach(InputAction action in actionKeys)
         {
-            debugActionsText.text += action.ToString() + " ";
+            debugActionsText.text += action.bindings[0].ToString() + " ";
         }
     }
 }
