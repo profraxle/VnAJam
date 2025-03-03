@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5037218303847950174}
   - component: {fileID: 1763936351141988377}
   - component: {fileID: 80415450270047271}
+  - component: {fileID: 1228452791811242603}
   - component: {fileID: 8930961691362981728}
   - component: {fileID: 4786614813690578907}
   - component: {fileID: 907200200031864771}
@@ -54,6 +55,7 @@ MonoBehaviour:
   _movingBehaviour: {fileID: 80415450270047271}
   _fishingBehaviour: {fileID: 0}
   _rigidbody: {fileID: 0}
+  _groundCheck: {fileID: 0}
 --- !u!114 &1763936351141988377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,6 +87,24 @@ MonoBehaviour:
   jumpForce: 10
   _groundCheck: {fileID: 8601812306798828212}
   _rigidbody: {fileID: 0}
+--- !u!114 &1228452791811242603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089085397772844324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7336e6871e186554f98243ee0e236e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugActionsText: {fileID: 0}
+  isFishing: 0
+  actionKeys: []
+  curActions: []
+  curIndex: 0
+  fishDelayMax: 0
 --- !u!50 &8930961691362981728
 Rigidbody2D:
   serializedVersion: 4
