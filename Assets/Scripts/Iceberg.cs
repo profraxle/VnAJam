@@ -7,6 +7,13 @@ public class Iceberg : MonoBehaviour
 {
     [SerializeField]
     List<float> stageTimers = new List<float>();
+    [SerializeField]
+    List<Texture2D> textures = new List<Texture2D>();
+    
+    [SerializeField]
+    GameObject loadBearObject;
+    
+    public Vector2 loadBearPos;
 
     [SerializeField]
     private int icebergLifeMax = 3;
@@ -22,6 +29,7 @@ public class Iceberg : MonoBehaviour
     {
         icebergLife = icebergLifeMax;
         SetActiveTimer();
+        loadBearPos = loadBearObject.transform.position;
     }
 
     // Update is called once per frame

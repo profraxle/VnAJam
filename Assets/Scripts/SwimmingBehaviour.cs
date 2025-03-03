@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -77,4 +78,8 @@ public class SwimmingBehaviour : BaseBehaviour
     {
         _rigidbody.AddForce(Vector2.right * _swimForce);
     }
+
+    
+    
+    
 }
