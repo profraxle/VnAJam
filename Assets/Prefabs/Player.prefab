@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8049033442194062430}
   - component: {fileID: 5037218303847950174}
   - component: {fileID: 1763936351141988377}
+  - component: {fileID: 80415450270047271}
   - component: {fileID: 8930961691362981728}
   - component: {fileID: 4786614813690578907}
   - component: {fileID: 907200200031864771}
@@ -49,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _swimmingBehaviour: {fileID: 1763936351141988377}
-  _movingBehaviour: {fileID: 0}
+  _movingBehaviour: {fileID: 80415450270047271}
   _fishingBehaviour: {fileID: 0}
   _rigidbody: {fileID: 0}
 --- !u!114 &1763936351141988377
@@ -67,6 +68,20 @@ MonoBehaviour:
   _swimForce: 50
   _rigidbody: {fileID: 0}
   resetTimerAmount: 1
+--- !u!114 &80415450270047271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089085397772844324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05fbcdfa97f01644b7137e3cf81515b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveForce: 5
+  _rigidbody: {fileID: 0}
 --- !u!50 &8930961691362981728
 Rigidbody2D:
   serializedVersion: 4

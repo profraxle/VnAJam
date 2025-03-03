@@ -28,6 +28,7 @@ public class PolarBear : MonoBehaviour
     {
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
         _swimmingBehaviour._rigidbody = _rigidbody;
+        _movingBehaviour._rigidbody = _rigidbody;
     }
 
     // Update is called once per frame
