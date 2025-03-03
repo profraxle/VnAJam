@@ -1,27 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class FishingBehaviour : BaseBehaviour
 {
-    KeyCode[] actionKeysSet = { 
+    //Debug Things
+    [Header("Debug Things")]
+    public TextMeshProUGUI debugActionsText;
+    [Space(10)]
+
+    [Header("Fishing Variables")]
+    
+    public bool isFishing = false;
+
+    [SerializeField]KeyCode[] actionKeys;
+
+    [SerializeField]KeyCode[] curActions;
+    [SerializeField]int curIndex = 0;
+
+    KeyCode[] actionKeysSet = {
         KeyCode.W,
         KeyCode.A,
         KeyCode.S,
         KeyCode.D
     };
 
-    KeyCode[] actionKeys;
-
-    KeyCode[] curActions;
-    int curIndex = 0;
-
-    public bool isFishing = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartFishing(4);    
     }
 
     // Update is called once per frame
@@ -47,12 +56,14 @@ public class FishingBehaviour : BaseBehaviour
 
     void FishingDoneSuccess()
     {
-        Debug.LogError("Fishing was Successful");
+        debugActionsText.text = "Fishing Done!";
     }
 
     void GenerateRandomActions(int totActions)
     {
         actionKeys = new KeyCode[totActions];
+        curActions = new KeyCode[totActions];
+        curIndex = 0;
         for (int i=0; i < totActions; i++)
         {
             int index = Random.Range(0, actionKeysSet.Length);
@@ -72,7 +83,7 @@ public class FishingBehaviour : BaseBehaviour
     {
         foreach (KeyCode action in actionKeys)
         {
-            Debug.Log("Press: " + action);
+            debugActionsText.text += action.ToString() + " ";
         }
     }
 }
