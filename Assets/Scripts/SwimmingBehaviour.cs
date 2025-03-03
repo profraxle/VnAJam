@@ -4,31 +4,55 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SwimmingBehaviour : MonoBehaviour
+public class SwimmingBehaviour : BaseBehaviour
 {
     InputAction _leftPaddle;
     InputAction _rightPaddle;
+    
+    [SerializeField,Tooltip("Force per paddle")]
+    private float _swimForce = 100;
 
     private int neededPress;
 
-    Rigidbody2D _rigidbody;
-    
-    private void Start()
-    {
-        _leftPaddle = InputSystem.actions.FindAction("PaddleLeft");
-        _rightPaddle = InputSystem.actions.FindAction("PaddleRight");
+    public Rigidbody2D _rigidbody;
 
-        neededPress = -1;
+    [SerializeField, Tooltip("Seconds before input resets")]
+    private float resetTimerAmount = 2f;
+    
+    private float _resetTimer;
+    
+    protected override void Start()
+    {
+        _resetTimer = 0;
         
-        _rigidbody = GetComponent<Rigidbody2D>();
+        if (_leftPaddle == null)
+        {
+            _leftPaddle = InputSystem.actions.FindAction("PaddleLeft");
+            _rightPaddle = InputSystem.actions.FindAction("PaddleRight");
+
+            neededPress = -1;
+        }
     }
 
 
-    public virtual void BehaviourUpdate()
+    public override void BehaviourUpdate()
     {
+        if (_resetTimer > 0)
+        {
+            _resetTimer -= Time.deltaTime;
+        }
+        else
+        {
+            if (neededPress != -1)
+            {
+                neededPress = -1;
+            }
+        }
+        
         
         if (_rightPaddle.WasPressedThisFrame())
         {
+            _resetTimer = resetTimerAmount;
             if (neededPress == 0 || neededPress == -1)
             {
                 neededPress = 1;
@@ -38,6 +62,7 @@ public class SwimmingBehaviour : MonoBehaviour
         
         if (_leftPaddle.WasPressedThisFrame())
         {
+            _resetTimer = resetTimerAmount;
             if (neededPress == 1 || neededPress == -1)
             {
                 neededPress = 0;
@@ -50,6 +75,6 @@ public class SwimmingBehaviour : MonoBehaviour
 
     private void PropelBear()
     {
-        _rigidbody.AddForce(Vector2.right * 100);
+        _rigidbody.AddForce(Vector2.right * _swimForce);
     }
 }
