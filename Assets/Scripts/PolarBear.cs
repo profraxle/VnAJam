@@ -85,12 +85,26 @@ public class PolarBear : MonoBehaviour
                     EnergyManager.instance.isMoving = false;
                     break;
                 case BearState.Fishing:
-                    // _fishingBehaviour.BehaviourUpdate();
+                    _fishingBehaviour.BehaviourUpdate();
                     EnergyManager.instance.isSwimming = false;
                     EnergyManager.instance.isMoving = false;
                     break;
 
             }
+        }
+
+        if (_bearState.Equals(BearState.Fishing))
+        {
+            if (!_fishingBehaviour.debugActionsText.gameObject.activeInHierarchy)
+            {
+                _fishingBehaviour.debugActionsText.gameObject.SetActive(true);
+                _fishingBehaviour.arrowHUD.gameObject.SetActive(true);
+            }
+            
+        }else
+        {
+            _fishingBehaviour.debugActionsText.gameObject.SetActive(false);
+            _fishingBehaviour.arrowHUD.gameObject.SetActive(false);
         }
 
     }

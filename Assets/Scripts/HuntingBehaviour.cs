@@ -23,6 +23,15 @@ public class FishingBehaviour : BaseBehaviour
 
     InputAction[] actionKeysSet = new InputAction[4];
 
+    [SerializeField]
+    private float fishDelayMax;
+    private float fishDelay;
+
+    [SerializeField]
+    public GameObject arrowHUD;
+
+    private Dictionary<InputAction, int> arrowDict = new Dictionary<InputAction, int>();
+    
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -33,11 +42,17 @@ public class FishingBehaviour : BaseBehaviour
         actionKeysSet[2] = InputSystem.actions.FindAction("FishLeft");
         actionKeysSet[3] = InputSystem.actions.FindAction("FishRight");
 
-        StartFishing(4);
+        for (int i = 0; i < actionKeysSet.Length; i++)
+        {
+            arrowDict.Add(actionKeysSet[i], i);
+        }
+        
+        fishDelay = 0;
+        // StartFishing(4);
     }
 
     // Update is called once per frame
-    void Update()
+    public override void BehaviourUpdate()
     {
         if (isFishing)
         {
@@ -55,10 +70,23 @@ public class FishingBehaviour : BaseBehaviour
                 }
             }
         }
+        else
+        {
+            if (fishDelay > 0)
+            {
+                fishDelay -= Time.deltaTime;
+            }
+            else
+            {
+                StartFishing(4);
+            }
+        }
     }
 
     void FishingDoneSuccess()
     {
+        fishDelay = fishDelayMax;
+        isFishing = false;
         debugActionsText.text = "Fishing Done!";
         EnergyManager.instance.hasFished = true;
     }
@@ -85,9 +113,17 @@ public class FishingBehaviour : BaseBehaviour
 
     void PrintActions()
     {
+
+        debugActionsText.text = "";
+        int counter = 0;
         foreach(InputAction action in actionKeys)
         {
-            debugActionsText.text += action.bindings[0].ToString() + " ";
+            
+            //debugActionsText.text += action.bindings[0].ToString() + " ";
+            
+            
+            arrowHUD.GetComponent<ArrowHUD>().UpdateImage(counter,arrowDict[action]);
+            counter++;
         }
     }
 }
