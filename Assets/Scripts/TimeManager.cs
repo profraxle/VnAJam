@@ -14,7 +14,7 @@ public class TimeManager : MonoBehaviour
     [Header("Time Variables")]
     [SerializeField] bool start = false;
 
-    float curTime = 0;
+    [SerializeField]float curTime = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -42,8 +42,8 @@ public class TimeManager : MonoBehaviour
         timeText.text = "Time: " + niceTime;
     }
 
-    public void GetCurTime()
+    public float GetCurTime()
     {
-
+        return curTime;
     }
 }
