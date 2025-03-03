@@ -11,7 +11,8 @@ public class PolarBear : MonoBehaviour
         Fishing
     };
 
-    private BearState _bearState = BearState.Swimming;
+    private BearState _bearState = BearState.Moving;
+    
 
     [SerializeField]
     private SwimmingBehaviour _swimmingBehaviour;

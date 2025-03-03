@@ -11,7 +11,12 @@ public class MovingBehaviour : BaseBehaviour
     InputAction _jumpAction;
 
     [SerializeField]
-    private int moveForce;
+    private float moveForce;
+    [SerializeField]
+    private float jumpForce;
+    
+    [SerializeField]
+    GroundCheck _groundCheck;
     
     public Rigidbody2D _rigidbody;
 
@@ -27,6 +32,11 @@ public class MovingBehaviour : BaseBehaviour
         if (_moveAction.IsPressed())
         {
             _rigidbody.AddForce(new Vector2(_moveAction.ReadValue<Vector2>().x * moveForce,0), ForceMode2D.Force);
+        }
+
+        if (_jumpAction.WasPressedThisFrame() && _groundCheck.onGround)
+        {
+            _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 }
