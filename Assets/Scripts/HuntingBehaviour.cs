@@ -57,6 +57,7 @@ public class FishingBehaviour : BaseBehaviour
     void FishingDoneSuccess()
     {
         debugActionsText.text = "Fishing Done!";
+        EnergyManager.instance.hasFished = true;
     }
 
     void GenerateRandomActions(int totActions)
