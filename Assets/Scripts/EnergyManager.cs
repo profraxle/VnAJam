@@ -10,9 +10,14 @@ public class EnergyManager : MonoBehaviour
     
 
     [Header("Energy Variables")]
-    [SerializeField] float idleRate = 0.001f;
-    [SerializeField] float swimRate = 0.05f;
+    [SerializeField] float idleRate = 0.005f;
+
+    [SerializeField] float moveRate = 0.0075f;
+    public bool isMoving = false;
+
+    [SerializeField] float swimRate = 0.009f;
     public bool isSwimming = false;
+
     [SerializeField] float fishingRate = 0.5f;
     public bool hasFished = false;
 
@@ -76,6 +81,21 @@ public class EnergyManager : MonoBehaviour
         }
     }
 
+    void MoveDrain()
+    {
+        if (curEnergy > 0)
+        {
+            curEnergy -= moveRate;
+            UpdateSlider();
+        }
+        else
+        {
+            dead = true;
+            curEnergy = 0;
+            UpdateSlider();
+        }
+    }
+
     IEnumerator GainEnergy()
     {
         while(curEnergy < maxEnergy)
@@ -93,6 +113,11 @@ public class EnergyManager : MonoBehaviour
         if (!dead)
         {
             IdleDrain();
+
+            if (isMoving)
+            {
+                MoveDrain();
+            }
 
             if (isSwimming)
             {
