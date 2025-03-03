@@ -38,12 +38,18 @@ public class PolarBear : MonoBehaviour
         {
             case BearState.Moving:
                 _movingBehaviour.BehaviourUpdate();
+                EnergyManager.instance.isSwimming = false;
+                EnergyManager.instance.isMoving = true;
                 break;
             case BearState.Swimming:
                 _swimmingBehaviour.BehaviourUpdate();
+                EnergyManager.instance.isSwimming = true;
+                EnergyManager.instance.isMoving = false;
                 break;
             case BearState.Fishing:
-                _swimmingBehaviour.BehaviourUpdate();
+                _fishingBehaviour.BehaviourUpdate();
+                EnergyManager.instance.isSwimming = false;
+                EnergyManager.instance.isMoving = false;
                 break;
             
         }
