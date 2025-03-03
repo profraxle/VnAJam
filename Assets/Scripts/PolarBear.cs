@@ -13,9 +13,14 @@ public class PolarBear : MonoBehaviour
 
     private BearState _bearState = BearState.Swimming;
 
-    private SwimmingBehaviour _swimmingBehaviour = new SwimmingBehaviour();
-    private MovingBehaviour _movingBehaviour = new MovingBehaviour();
-    private FishingBehaviour _fishingBehaviour = new FishingBehaviour();
+    [SerializeField]
+    private SwimmingBehaviour _swimmingBehaviour;
+
+    [SerializeField] 
+    private MovingBehaviour _movingBehaviour;
+    
+    [SerializeField]
+    private FishingBehaviour _fishingBehaviour;
     public Rigidbody2D _rigidbody;
     
     // Start is called before the first frame update
