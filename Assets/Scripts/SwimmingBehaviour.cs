@@ -4,28 +4,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SwimmingBehaviour : MonoBehaviour
+public class SwimmingBehaviour : BaseBehaviour
 {
     InputAction _leftPaddle;
     InputAction _rightPaddle;
 
     private int neededPress;
 
-    Rigidbody2D _rigidbody;
-    
-    private void Start()
-    {
-        _leftPaddle = InputSystem.actions.FindAction("PaddleLeft");
-        _rightPaddle = InputSystem.actions.FindAction("PaddleRight");
+    public Rigidbody2D _rigidbody;
 
-        neededPress = -1;
+    protected override void Start()
+    {
         
-        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
 
-    public virtual void BehaviourUpdate()
+    public override void BehaviourUpdate()
     {
+        if (_leftPaddle == null)
+        {
+            _leftPaddle = InputSystem.actions.FindAction("PaddleLeft");
+            _rightPaddle = InputSystem.actions.FindAction("PaddleRight");
+
+            neededPress = -1;
+        }
+        
         
         if (_rightPaddle.WasPressedThisFrame())
         {

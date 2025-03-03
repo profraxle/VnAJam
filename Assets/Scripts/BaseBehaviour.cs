@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class BaseBehaviour : MonoBehaviour
 {
+    protected virtual void Start()
+    {
+        
+    }
+    
     public virtual void BehaviourUpdate()
     {
         
