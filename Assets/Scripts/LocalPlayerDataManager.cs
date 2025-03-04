@@ -16,4 +16,9 @@ public class LocalPlayerDataManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
     
+    public void SetBearName(string name)
+    {
+        bearName = name;
+    }
+
 }
