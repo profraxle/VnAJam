@@ -6,7 +6,7 @@ using UnityEngine;
 public class LocalPlayerDataManager : MonoBehaviour
 {
     
-    static LocalPlayerDataManager Singleton;
+    public static LocalPlayerDataManager Singleton;
     public string bearName;
     public int playerScore;
 
