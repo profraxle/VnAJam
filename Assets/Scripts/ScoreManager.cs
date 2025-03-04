@@ -5,6 +5,8 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
+    public static ScoreManager instance;
+    
     [Header("UI")]
     public TextMeshProUGUI scoreText;
 
@@ -12,28 +14,49 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]int curScore = 0;
     [SerializeField] float standardMultiplier = 0.5f;
     [SerializeField] float huntingBonus = 10f;
+    
+    bool huntingBonusActive = false;
+
+    float scoreTimer;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        instance = this;
+        scoreTimer = 2f;
     }
 
     // Update is called once per frame
     void Update()
     {
         ShowScore();
+
+        if (scoreTimer > 0)
+        {
+            scoreTimer -= Time.deltaTime;
+        }
+        else
+        {
+            IncreaseScoreTime();
+            scoreTimer = 2f;
+        }
     }
 
-    public void AddHuntingBonus(float bonus = 10)
+    public void AddHuntingBonus(int bonus = 10)
     {
-        curScore += (int)bonus;
+        curScore += bonus;
+        ShowScore();
     }
 
     void ShowScore()
     {
-        curScore = (int) (TimeManager.instance.GetCurTime() * standardMultiplier);
         scoreText.text = "Score: " + curScore;
+    }
+
+    public void IncreaseScoreTime()
+    {
+        curScore += 1;
+        ShowScore();
     }
 
     public int GetCurScore()

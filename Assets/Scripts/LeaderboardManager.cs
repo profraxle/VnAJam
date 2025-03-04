@@ -19,20 +19,24 @@ public class LeaderboardManager : MonoBehaviour
    [SerializeField]
    GameObject entryPrefab;
 
-   [SerializeField] private GameObject titleText;
-
    public static LeaderboardManager Singleton;
    
    private async void Awake()
    {
       Singleton = this;
       await UnityServices.InitializeAsync();
+      AuthenticationService.Instance.ClearSessionToken();
       await AuthenticationService.Instance.SignInAnonymouslyAsync();
-      
+ 
    }
 
-   
-   
+   private void Start()
+   {
+      //AddScore(LocalPlayerDataManager.Singleton.playerScore, LocalPlayerDataManager.Singleton.bearName);
+      FetchLeaderboardDelay();
+   }
+
+
    public async void AddScore(int score,string nPlayerName)
    {
       ScoreData scoreData = new ScoreData{playerName = nPlayerName};
@@ -43,7 +47,7 @@ public class LeaderboardManager : MonoBehaviour
    { 
       LeaderboardScoresPage leaderboardEntries = await LeaderboardsService.Instance.GetScoresAsync("High_Scores",new GetScoresOptions{IncludeMetadata = true});
 
-      titleText.SetActive(true);
+      //titleText.SetActive(true);
       
       int count = 0;
       foreach (var entry in leaderboardEntries.Results)
@@ -51,9 +55,9 @@ public class LeaderboardManager : MonoBehaviour
          ScoreData scoreData = JsonUtility.FromJson<ScoreData>(entry.Metadata);
          
          GameObject entryVisual = Instantiate(entryPrefab,canvas.transform);
-         entryVisual.GetComponent<RectTransform>().anchoredPosition = new Vector2(0,-80-count*40);
+         entryVisual.GetComponent<RectTransform>().anchoredPosition = new Vector2(0,-80-count*60);
          entryVisual.GetComponent<LeaderboardEntryVisual>().SetText((entry.Rank+1).ToString(),scoreData.playerName,entry.Score.ToString());
-         
+         count++;
       }
       
    }
@@ -65,7 +69,7 @@ public class LeaderboardManager : MonoBehaviour
 
    private IEnumerator FetchLeaderboardCoroutine()
    {
-      yield return new WaitForSeconds(0.5f);
+      yield return new WaitForSeconds(1f);
       FetchLeaderboard();
    }
 

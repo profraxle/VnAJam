@@ -88,6 +88,7 @@ public class FishingBehaviour : BaseBehaviour
     {
         fishDelay = fishDelayMax;
         isFishing = false;
+        ScoreManager.instance.AddHuntingBonus();
         
         EnergyManager.instance.hasFished = true;
     }
