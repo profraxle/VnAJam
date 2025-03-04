@@ -12,13 +12,26 @@ public class LocalPlayerDataManager : MonoBehaviour
 
     private void Awake()
     {
-        Singleton = this;
+        if (LocalPlayerDataManager.Singleton == null)
+        {
+            Singleton = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+
         DontDestroyOnLoad(this);
     }
     
     public void SetBearName(string name)
     {
         bearName = name;
+    }
+
+    public void SetPlayerScore(int score)
+    {
+        playerScore = score;
     }
 
 }

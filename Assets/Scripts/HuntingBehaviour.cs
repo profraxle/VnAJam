@@ -23,7 +23,8 @@ public class FishingBehaviour : BaseBehaviour
     private float fishDelayMax;
     private float fishDelay;
 
-    
+    [SerializeField]
+    private Animator animator;
 
     [Header("UI")]
     public TextMeshProUGUI fishSuccessTxt;
@@ -95,6 +96,8 @@ public class FishingBehaviour : BaseBehaviour
         fishDelay = fishDelayMax;
         isFishing = false;
         ScoreManager.instance.AddHuntingBonus();
+        
+        animator.SetTrigger("Caught");
         
         EnergyManager.instance.hasFished = true;
     }

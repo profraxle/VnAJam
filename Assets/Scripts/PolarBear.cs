@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PolarBear : MonoBehaviour
 {
-    enum BearState
+    public enum BearState
     {
         Moving,
         Swimming,
         Fishing
     };
 
-    private BearState _bearState = BearState.Swimming;
+    public BearState _bearState = BearState.Swimming;
     
 
     [SerializeField]
@@ -37,6 +37,7 @@ public class PolarBear : MonoBehaviour
     [SerializeField]
     private Animator animator;
     
+    private SpriteRenderer spriteRenderer;
     
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,8 @@ public class PolarBear : MonoBehaviour
         _movingBehaviour._rigidbody = _rigidbody;
 
         waterLevel = GameObject.FindWithTag("Water");
+        
+        spriteRenderer = GetComponent<SpriteRenderer>();
         
     }
 
@@ -82,16 +85,19 @@ public class PolarBear : MonoBehaviour
                     _movingBehaviour.BehaviourUpdate();
                     EnergyManager.instance.isSwimming = false;
                     EnergyManager.instance.isMoving = true;
+                    spriteRenderer.sortingLayerID = 0;
                     break;
                 case BearState.Swimming:
                     _swimmingBehaviour.BehaviourUpdate();
                     EnergyManager.instance.isSwimming = true;
                     EnergyManager.instance.isMoving = false;
+                    spriteRenderer.sortingOrder = 0;
                     break;
                 case BearState.Fishing:
                     _fishingBehaviour.BehaviourUpdate();
                     EnergyManager.instance.isSwimming = false;
                     EnergyManager.instance.isMoving = false;
+                    spriteRenderer.sortingOrder = 3;
                     break;
 
             }

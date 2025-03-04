@@ -59,7 +59,7 @@ public class IcebergSpawner : MonoBehaviour
             }
         }
 
-        icebergChance =  (60-(TimeManager.instance.GetCurTime()/baseTime*6));
+        icebergChance =  10+(60-(TimeManager.instance.GetCurTime()/baseTime*6));
 
     }
 }

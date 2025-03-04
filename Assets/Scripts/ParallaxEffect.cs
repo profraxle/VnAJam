@@ -17,7 +17,7 @@ public class ParallaxEffect : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         Vector3 pos = MainCamera.transform.position;
         float temp = pos.x * (1-amountOfParallax);

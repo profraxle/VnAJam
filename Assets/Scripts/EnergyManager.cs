@@ -9,8 +9,6 @@ public class EnergyManager : MonoBehaviour
 {
     public static EnergyManager instance;
 
-    
-
     [Header("Energy Variables")]
     [SerializeField] float idleRate = 0.005f;
 
@@ -108,6 +106,10 @@ public class EnergyManager : MonoBehaviour
             curEnergy += fishingRate;
             UpdateSlider();
             yield return new WaitForSeconds(.1f);
+            if (GameObject.FindWithTag("Player").GetComponent<PolarBear>()._bearState == PolarBear.BearState.Fishing)
+            {
+                break;
+            };
         }
         hasFished = false;
     }
@@ -131,7 +133,9 @@ public class EnergyManager : MonoBehaviour
 
             if (hasFished)
             {
-                StartCoroutine(nameof(GainEnergy));
+                //StartCoroutine(nameof(GainEnergy));
+                curEnergy = maxEnergy;
+                hasFished = false;
             }
         }
         else
@@ -140,7 +144,7 @@ public class EnergyManager : MonoBehaviour
             {
                 endGame = true;
 
-                LocalPlayerDataManager.Singleton.playerScore = ScoreManager.instance.GetCurScore();
+                LocalPlayerDataManager.Singleton.SetPlayerScore(ScoreManager.instance.GetCurScore());
                 SceneManager.LoadScene("Leaderboard");
             }
         }

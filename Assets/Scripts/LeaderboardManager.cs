@@ -28,10 +28,21 @@ public class LeaderboardManager : MonoBehaviour
    private async void Awake()
    {
       Singleton = this;
+      
+      
       await UnityServices.InitializeAsync();
+      if (AuthenticationService.Instance.IsAuthorized)
+      {
+         AuthenticationService.Instance.SignOut();
+         
+      }
       AuthenticationService.Instance.ClearSessionToken();
+
       await AuthenticationService.Instance.SignInAnonymouslyAsync();
- 
+      
+      AddScore(LocalPlayerDataManager.Singleton.playerScore, LocalPlayerDataManager.Singleton.bearName);
+      //AddScore(53,"Kojima");
+      FetchLeaderboardDelay();
    }
 
    private void Start()
@@ -39,8 +50,6 @@ public class LeaderboardManager : MonoBehaviour
       spielText.GetComponent<TextMeshProUGUI>().text =
          "The melting ice caps are making it harder for Polar Bears to find food.\n \nTogether we can save them, adopt a Polar Bear like " +
          LocalPlayerDataManager.Singleton.bearName + " today with the WWF.";
-      AddScore(LocalPlayerDataManager.Singleton.playerScore, LocalPlayerDataManager.Singleton.bearName);
-      FetchLeaderboardDelay();
    }
 
 
@@ -76,7 +85,7 @@ public class LeaderboardManager : MonoBehaviour
 
    private IEnumerator FetchLeaderboardCoroutine()
    {
-      yield return new WaitForSeconds(3f);
+      yield return new WaitForSeconds(1f);
       FetchLeaderboard();
    }
 

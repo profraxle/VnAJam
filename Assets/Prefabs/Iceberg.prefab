@@ -49,10 +49,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageTimers:
-  - 4
   - 3
   - 3
-  textures: []
+  - 2
+  - 1
+  - 1
+  sprites:
+  - {fileID: 21300000, guid: 989a69bf6b22dc7498b755bce221b790, type: 3}
+  - {fileID: 21300000, guid: 16ae0db0851967143a5a788a469461bf, type: 3}
+  - {fileID: 21300000, guid: 923c032a76cc8014cbde7483da215b80, type: 3}
+  - {fileID: 21300000, guid: c4151614d77a753488cb3f98a59a830a, type: 3}
+  - {fileID: 21300000, guid: a19e210e78e21da4ba9db19dfbcf0e0f, type: 3}
+  spriteRenderer: {fileID: 1421064133464911152}
   loadBearObject: {fileID: 6254529584275468546}
   loadBearPos: {x: 0, y: 0}
   icebergLifeMax: 3
@@ -142,7 +150,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9ee56064a3a02ea449280f833bff1e7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -8,7 +8,10 @@ public class Iceberg : MonoBehaviour
     [SerializeField]
     List<float> stageTimers = new List<float>();
     [SerializeField]
-    List<Texture2D> textures = new List<Texture2D>();
+    List<Sprite> sprites = new List<Sprite>();
+    
+    [SerializeField]
+    SpriteRenderer spriteRenderer;
     
     [SerializeField]
     GameObject loadBearObject;
@@ -59,6 +62,7 @@ public class Iceberg : MonoBehaviour
     private void SetActiveTimer()
     {
         _activeTimer = stageTimers[icebergLifeMax-icebergLife];
+        spriteRenderer.sprite = sprites[icebergLifeMax-icebergLife];
     }
 
     private void OnCollisionEnter2D(Collision2D other)

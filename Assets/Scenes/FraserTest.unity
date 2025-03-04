@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a78a2a60244e249a1eb97f89f3232c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountOfParallax: 0.8
+  amountOfParallax: 1
   MainCamera: {fileID: 1284435895}
 --- !u!212 &37669797
 SpriteRenderer:
@@ -215,7 +215,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 192, y: 10.8}
+  m_Size: {x: 10000, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
@@ -618,7 +618,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.70980394, g: 0.8156863, b: 0.99215686, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -874,7 +874,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 192, y: 29.64}
+  m_Size: {x: 10000, y: 29.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
@@ -973,7 +973,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 192, y: 10.8}
+  m_Size: {x: 10000, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1055,11 +1055,11 @@ MonoBehaviour:
   m_ScreenY: 0.75
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0
+  m_DeadZoneHeight: 0.62
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.8
-  m_SoftZoneHeight: 0.8
+  m_SoftZoneHeight: 0.62
   m_BiasX: 0
   m_BiasY: -0.338
   m_CenterOnActivate: 1
@@ -1179,7 +1179,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 192, y: 6.65}
+  m_Size: {x: 10000, y: 6.65}
   m_AdaptiveModeThreshold: 0
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
@@ -1188,6 +1188,11 @@ SpriteRenderer:
 --- !u!1 &1176209894 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1089085397772844324, guid: 9df0024fb6586054a914b42ccc5c34f1, type: 3}
+  m_PrefabInstance: {fileID: 2063570131}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1176209895 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1287308957507510592, guid: 9df0024fb6586054a914b42ccc5c34f1, type: 3}
   m_PrefabInstance: {fileID: 2063570131}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1209684948
@@ -1389,7 +1394,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 192, y: 10.8}
+  m_Size: {x: 1000, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
@@ -1559,7 +1564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1748020624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1671,7 +1676,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 192, y: 10.8}
+  m_Size: {x: 1000, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
@@ -1839,6 +1844,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1228452791811242603, guid: 9df0024fb6586054a914b42ccc5c34f1, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1176209895}
     - target: {fileID: 1228452791811242603, guid: 9df0024fb6586054a914b42ccc5c34f1, type: 3}
       propertyPath: fishDelayMax
       value: 1
