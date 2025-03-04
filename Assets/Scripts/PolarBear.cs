@@ -1,6 +1,5 @@
-using UnityEditor.Animations;
+
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 
 public class PolarBear : MonoBehaviour
