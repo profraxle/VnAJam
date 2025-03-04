@@ -27,10 +27,10 @@ public class ParallaxEffect : MonoBehaviour
         
         transform.position = newPos;
 
-        if (temp > _startingPos + (_lengthOfSprite / 2))
+        if (temp > _startingPos + (_lengthOfSprite / 3))
         {
             _startingPos += _lengthOfSprite;
-        }else if (temp < _startingPos - (_lengthOfSprite / 2))
+        }else if (temp < _startingPos - (_lengthOfSprite / 3))
         {
             _startingPos -= _lengthOfSprite;
         }
