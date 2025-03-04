@@ -55,7 +55,7 @@ public class LeaderboardManager : MonoBehaviour
          ScoreData scoreData = JsonUtility.FromJson<ScoreData>(entry.Metadata);
          
          GameObject entryVisual = Instantiate(entryPrefab,canvas.transform);
-         entryVisual.GetComponent<RectTransform>().anchoredPosition = new Vector2(0,-80-count*60);
+         entryVisual.GetComponent<RectTransform>().anchoredPosition = new Vector2(-400,-150-count*90);
          entryVisual.GetComponent<LeaderboardEntryVisual>().SetText((entry.Rank+1).ToString(),scoreData.playerName,entry.Score.ToString());
          count++;
       }
