@@ -1,3 +1,4 @@
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -33,6 +34,9 @@ public class PolarBear : MonoBehaviour
     private Vector2 startPos;
     private bool lerping;
     private float lerpAmount;
+
+    [SerializeField]
+    private Animator animator;
     
     
     // Start is called before the first frame update
@@ -43,6 +47,7 @@ public class PolarBear : MonoBehaviour
         _movingBehaviour._rigidbody = _rigidbody;
 
         waterLevel = GameObject.FindWithTag("Water");
+        
     }
 
     // Update is called once per frame
@@ -93,18 +98,15 @@ public class PolarBear : MonoBehaviour
             }
         }
 
-        if (_bearState.Equals(BearState.Fishing))
+        if (!_bearState.Equals(BearState.Fishing))
+
         {
-            if (!_fishingBehaviour.debugActionsText.gameObject.activeInHierarchy)
-            {
-                _fishingBehaviour.debugActionsText.gameObject.SetActive(true);
-                _fishingBehaviour.arrowHUD.gameObject.SetActive(true);
-            }
-            
-        }else
-        {
-            _fishingBehaviour.debugActionsText.gameObject.SetActive(false);
+            animator.SetBool("Fishing", false);
             _fishingBehaviour.arrowHUD.gameObject.SetActive(false);
+        }
+        else
+        {
+            animator.SetBool("Fishing", true);
         }
 
     }

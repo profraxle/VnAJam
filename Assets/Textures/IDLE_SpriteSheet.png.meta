@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6703d0427cabbbc449e1d42f02a2ad1a
+guid: c8b90297b77828d4d9161c926d588b3f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,8 +34,8 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 2
-    aniso: 16
+    filterMode: 1
+    aniso: 1
     mipBias: 0
     wrapU: 1
     wrapV: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 70
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_0
+      name: IDLE_SpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11e58544b158a3249ad644a277c58af2
-      internalID: -747814900
+      spriteID: 01ebeac926089c94ab4b706c401fddd7
+      internalID: -1221347340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_1
+      name: IDLE_SpriteSheet_1
       rect:
         serializedVersion: 2
         x: 1920
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 418f59131ef1cb8409b49ee9170bfd29
-      internalID: 145457676
+      spriteID: e80e6a2af6a18ca4a8911917ba1f449a
+      internalID: 1238350696
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_2
+      name: IDLE_SpriteSheet_2
       rect:
         serializedVersion: 2
         x: 3840
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abca1ff8947fb2f40843ea89f10731f0
-      internalID: 1625735532
+      spriteID: e46e1568e86f79b4ab9ad54af532a627
+      internalID: 188490085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_3
+      name: IDLE_SpriteSheet_3
       rect:
         serializedVersion: 2
         x: 5760
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bae986476ef7a5147ae77b02bbba2aed
-      internalID: 184339281
+      spriteID: fda9a1c9bd4e3d24c94df541657c1232
+      internalID: -939270606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_4
+      name: IDLE_SpriteSheet_4
       rect:
         serializedVersion: 2
         x: 7680
@@ -221,35 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 454de969380e48d4db94ab679b9ae7a7
-      internalID: -1624965033
+      spriteID: 29ae7251ae4a29d4ea006101e4bd852b
+      internalID: -830706152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_5
-      rect:
-        serializedVersion: 2
-        x: 9600
-        y: 3240
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2eb4ded05357c9c4b9b004f10ffa47bf
-      internalID: -1815845432
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SWIM_SpriteSheet_6
+      name: IDLE_SpriteSheet_5
       rect:
         serializedVersion: 2
         x: 0
@@ -263,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ba7e3613e6cc3d46aa995b81cced47a
-      internalID: -556964383
+      spriteID: 12e7b27f97c2bfa419ab41965c21a48f
+      internalID: 938323348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_7
+      name: IDLE_SpriteSheet_6
       rect:
         serializedVersion: 2
         x: 1920
@@ -284,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7734ec9ad69ea98488b6ba7e96be631f
-      internalID: 1063240839
+      spriteID: 9fff49bd3db1448499529376b02e04da
+      internalID: 1235109424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_8
+      name: IDLE_SpriteSheet_7
       rect:
         serializedVersion: 2
         x: 3840
@@ -305,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ee17ca0f7dd0fa45b10200d89edb1ef
-      internalID: 118258570
+      spriteID: 00e309b3049e6b54f80ec23cf808fd1d
+      internalID: -834170996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_9
+      name: IDLE_SpriteSheet_8
       rect:
         serializedVersion: 2
         x: 5760
@@ -326,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51a3e785bd936fd458d105001ba21745
-      internalID: -208973654
+      spriteID: 84eb037ec5b47b547963e79d920308aa
+      internalID: 312559358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_10
+      name: IDLE_SpriteSheet_9
       rect:
         serializedVersion: 2
         x: 7680
@@ -347,35 +326,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e09c1cca733719745898d25ea8754ae6
-      internalID: 236319074
+      spriteID: b4b2de030282f854c9887a8fd33df1a0
+      internalID: -356717554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_11
-      rect:
-        serializedVersion: 2
-        x: 9600
-        y: 2160
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05bb7e6aeca2ec74c8255d7b51d14cbb
-      internalID: -1512036009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SWIM_SpriteSheet_12
+      name: IDLE_SpriteSheet_10
       rect:
         serializedVersion: 2
         x: 0
@@ -389,14 +347,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2853d4fe2bef3de489e8d2bee8a518cd
-      internalID: -1919946274
+      spriteID: f30fcb1217b70474eb3ae29e251d5e6a
+      internalID: -1874643642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_13
+      name: IDLE_SpriteSheet_11
       rect:
         serializedVersion: 2
         x: 1920
@@ -410,14 +368,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09d3b33691608104a8e49e1243a74785
-      internalID: 1806833415
+      spriteID: fd76447adfdb4ab448814a04987b3e4a
+      internalID: 1963331107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_14
+      name: IDLE_SpriteSheet_12
       rect:
         serializedVersion: 2
         x: 3840
@@ -431,14 +389,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f980c296131d7f4bbcc7e8262c239ae
-      internalID: 182673318
+      spriteID: 7940b8e793a549447889db64aed0d9c4
+      internalID: 987191779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_15
+      name: IDLE_SpriteSheet_13
       rect:
         serializedVersion: 2
         x: 5760
@@ -452,14 +410,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41cb492219fdd494a8e9d22962642222
-      internalID: 1856079737
+      spriteID: 5a1c94ac0549c6943a32b89a764c6a14
+      internalID: 1395403041
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_16
+      name: IDLE_SpriteSheet_14
       rect:
         serializedVersion: 2
         x: 7680
@@ -473,35 +431,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66bddd2d2207c734c9a8df38bd0edaa5
-      internalID: -1090036261
+      spriteID: 2c073ca8e482ed5488a8ec6179e9b3bc
+      internalID: 1088022283
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_17
-      rect:
-        serializedVersion: 2
-        x: 9600
-        y: 1080
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3f4fd46d6a223048bb48db986c34ffe
-      internalID: 667612814
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SWIM_SpriteSheet_18
+      name: IDLE_SpriteSheet_15
       rect:
         serializedVersion: 2
         x: 0
@@ -515,14 +452,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7634745d70f6d4543ba2fc875abe4da7
-      internalID: 834035734
+      spriteID: 2a7a7735fee9dc64ea1c37b1eff59056
+      internalID: 2017271181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_19
+      name: IDLE_SpriteSheet_16
       rect:
         serializedVersion: 2
         x: 1920
@@ -536,14 +473,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9547c3b6b43843641bb6f4a946f5212e
-      internalID: 1309773695
+      spriteID: 6d599296578cacc49b87c8e512ee5cbf
+      internalID: -1462749249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_20
+      name: IDLE_SpriteSheet_17
       rect:
         serializedVersion: 2
         x: 3840
@@ -557,14 +494,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6829283026eb21419f5c8705bcf9ff5
-      internalID: -1225298933
+      spriteID: 9ddaf5080746dd54eb84ca406a9ecf87
+      internalID: -917205211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SWIM_SpriteSheet_21
+      name: IDLE_SpriteSheet_18
       rect:
         serializedVersion: 2
         x: 5760
@@ -578,8 +515,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d1315d23ea58cc49988376c2d910ff6
-      internalID: -242556760
+      spriteID: b8199c55c6db876499d2f7114a760527
+      internalID: -551720286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDLE_SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d0d09164f9d0924c9375f733fc6b127
+      internalID: 831078997
       vertices: []
       indices: 
       edges: []
@@ -595,28 +553,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SWIM_SpriteSheet_0: -747814900
-      SWIM_SpriteSheet_1: 145457676
-      SWIM_SpriteSheet_10: 236319074
-      SWIM_SpriteSheet_11: -1512036009
-      SWIM_SpriteSheet_12: -1919946274
-      SWIM_SpriteSheet_13: 1806833415
-      SWIM_SpriteSheet_14: 182673318
-      SWIM_SpriteSheet_15: 1856079737
-      SWIM_SpriteSheet_16: -1090036261
-      SWIM_SpriteSheet_17: 667612814
-      SWIM_SpriteSheet_18: 834035734
-      SWIM_SpriteSheet_19: 1309773695
-      SWIM_SpriteSheet_2: 1625735532
-      SWIM_SpriteSheet_20: -1225298933
-      SWIM_SpriteSheet_21: -242556760
-      SWIM_SpriteSheet_3: 184339281
-      SWIM_SpriteSheet_4: -1624965033
-      SWIM_SpriteSheet_5: -1815845432
-      SWIM_SpriteSheet_6: -556964383
-      SWIM_SpriteSheet_7: 1063240839
-      SWIM_SpriteSheet_8: 118258570
-      SWIM_SpriteSheet_9: -208973654
+      IDLE_SpriteSheet_0: -1221347340
+      IDLE_SpriteSheet_1: 1238350696
+      IDLE_SpriteSheet_10: -1874643642
+      IDLE_SpriteSheet_11: 1963331107
+      IDLE_SpriteSheet_12: 987191779
+      IDLE_SpriteSheet_13: 1395403041
+      IDLE_SpriteSheet_14: 1088022283
+      IDLE_SpriteSheet_15: 2017271181
+      IDLE_SpriteSheet_16: -1462749249
+      IDLE_SpriteSheet_17: -917205211
+      IDLE_SpriteSheet_18: -551720286
+      IDLE_SpriteSheet_19: 831078997
+      IDLE_SpriteSheet_2: 188490085
+      IDLE_SpriteSheet_3: -939270606
+      IDLE_SpriteSheet_4: -830706152
+      IDLE_SpriteSheet_5: 938323348
+      IDLE_SpriteSheet_6: 1235109424
+      IDLE_SpriteSheet_7: -834170996
+      IDLE_SpriteSheet_8: 312559358
+      IDLE_SpriteSheet_9: -356717554
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
