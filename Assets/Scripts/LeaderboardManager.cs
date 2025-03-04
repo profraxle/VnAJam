@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using TMPro;
 using Unity.Services.Leaderboards;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
@@ -18,6 +19,9 @@ public class LeaderboardManager : MonoBehaviour
    
    [SerializeField]
    GameObject entryPrefab;
+   
+   [SerializeField]
+   GameObject spielText;
 
    public static LeaderboardManager Singleton;
    
@@ -32,7 +36,10 @@ public class LeaderboardManager : MonoBehaviour
 
    private void Start()
    {
-      //AddScore(LocalPlayerDataManager.Singleton.playerScore, LocalPlayerDataManager.Singleton.bearName);
+      spielText.GetComponent<TextMeshProUGUI>().text =
+         "The melting ice caps are making it harder for Polar Bears to find food.\n \nTogether we can save them, adopt a Polar Bear like " +
+         LocalPlayerDataManager.Singleton.bearName + " today with the WWF.";
+      AddScore(LocalPlayerDataManager.Singleton.playerScore, LocalPlayerDataManager.Singleton.bearName);
       FetchLeaderboardDelay();
    }
 
