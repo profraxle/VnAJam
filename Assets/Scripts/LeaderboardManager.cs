@@ -76,7 +76,7 @@ public class LeaderboardManager : MonoBehaviour
 
    private IEnumerator FetchLeaderboardCoroutine()
    {
-      yield return new WaitForSeconds(1f);
+      yield return new WaitForSeconds(3f);
       FetchLeaderboard();
    }
 
