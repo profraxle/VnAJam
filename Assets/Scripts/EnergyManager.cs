@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class EnergyManager : MonoBehaviour
@@ -32,6 +33,8 @@ public class EnergyManager : MonoBehaviour
     [Header("Life")]
     public bool dead = false;
 
+    private bool endGame;
+
     private void Awake()
     {
         instance = this;
@@ -44,6 +47,7 @@ public class EnergyManager : MonoBehaviour
         slider = sliderGO.GetComponent<Slider>();
         slider.maxValue = maxEnergy;
         slider.value = curEnergy;
+        endGame = false;
     }
 
     void UpdateSlider()
@@ -127,6 +131,16 @@ public class EnergyManager : MonoBehaviour
             if (hasFished)
             {
                 StartCoroutine(nameof(GainEnergy));
+            }
+        }
+        else
+        {
+            if (!endGame)
+            {
+                LeaderboardManager.Singleton.AddScore(100,"funny");
+                
+                LeaderboardManager.Singleton.FetchLeaderboardDelay();
+                endGame = true;
             }
         }
     }

@@ -7,9 +7,6 @@ using UnityEngine.InputSystem;
 
 public class FishingBehaviour : BaseBehaviour
 {
-    //Debug Things
-    [Header("Debug Things")]
-    public TextMeshProUGUI debugActionsText;
     [Space(10)]
 
     [Header("Fishing Variables")]
@@ -56,6 +53,10 @@ public class FishingBehaviour : BaseBehaviour
     {
         if (isFishing)
         {
+            if (!arrowHUD.gameObject.activeInHierarchy)
+            {
+                arrowHUD.gameObject.SetActive(true);
+            }
             if (actionKeys[curIndex].IsPressed())
             {
                 if(curIndex == actionKeys.Length - 1)
@@ -87,7 +88,7 @@ public class FishingBehaviour : BaseBehaviour
     {
         fishDelay = fishDelayMax;
         isFishing = false;
-        debugActionsText.text = "Fishing Done!";
+        
         EnergyManager.instance.hasFished = true;
     }
 
@@ -114,14 +115,12 @@ public class FishingBehaviour : BaseBehaviour
     void PrintActions()
     {
 
-        debugActionsText.text = "";
+       
         int counter = 0;
         foreach(InputAction action in actionKeys)
         {
             
-            //debugActionsText.text += action.bindings[0].ToString() + " ";
-            
-            
+            //use dict to find arrow index and feed to the arrowHUD;
             arrowHUD.GetComponent<ArrowHUD>().UpdateImage(counter,arrowDict[action]);
             counter++;
         }
