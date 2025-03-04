@@ -10,7 +10,6 @@ public class FishingBehaviour : BaseBehaviour
     [Space(10)]
 
     [Header("Fishing Variables")]
-    
     public bool isFishing = false;
 
     [SerializeField]InputAction[] actionKeys;
@@ -24,6 +23,10 @@ public class FishingBehaviour : BaseBehaviour
     private float fishDelayMax;
     private float fishDelay;
 
+    
+
+    [Header("UI")]
+    public TextMeshProUGUI fishSuccessTxt;
     [SerializeField]
     public GameObject arrowHUD;
 
@@ -76,10 +79,13 @@ public class FishingBehaviour : BaseBehaviour
             if (fishDelay > 0)
             {
                 fishDelay -= Time.deltaTime;
+                fishSuccessTxt.gameObject.SetActive(true);
             }
             else
             {
                 StartFishing(4);
+                fishSuccessTxt.gameObject.SetActive(false);
+
             }
         }
     }
