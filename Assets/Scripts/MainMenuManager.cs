@@ -13,6 +13,7 @@ public class MainMenuManager : MonoBehaviour
     [Header("Depressed Image")]
     public Sprite depressedImage;
 
+
     public void HandleScreens(int index)
     {
         GameObject button = EventSystem.current.currentSelectedGameObject;
@@ -42,6 +43,8 @@ public class MainMenuManager : MonoBehaviour
 
         StartCoroutine(PlayGameCor(index, buttonImage, sprite));
     }
+
+    
 
     IEnumerator PlayGameCor(int index, Image buttonImage, Sprite orgSprite)
     {

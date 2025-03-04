@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FraserTest.unity
     guid: 620f1a5645145d548a5aa1ceeebd7d65
+  - enabled: 1
+    path: Assets/Scenes/Leaderboard.unity
+    guid: 1ca40a764a582b74a8ab6aaaffb33ef2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: ebc620a6ad4890f4c989225203977490, type: 3}
